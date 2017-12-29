@@ -1,0 +1,31 @@
+{% extends 'noteshare/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static "noteshare/css/index.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block body_block %}
+    <section id="home-slider">
+        <div class="container">
+            <div class="row">
+                <div class="main-slider">
+                    <div class="slide-text">
+                        <h1>Welcome</h1>
+                        <p>NoteShare is a personal project for notes sharing.</p>
+                        <p>Currently, we have course materials from these universities:</p>
+                        <ul>
+                            {% for u in universities %}
+                                <li><a href="{% url 'noteshare_index' %}{{ u.id }}">{{ u.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <img src={% static "noteshare/images/home/slider/chino-yoko.png" %} class="slider-chino" alt="slider image">
+                </div>
+                <p class="slider-chino-text text-right">Source: <a href="https://zh.moegirl.org/zh-hans/香风智乃" target="_blank">moegirl.org</a></p>
+            </div>
+        </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    </section>
+    <!--/#home-slider-->
+{% endblock %}

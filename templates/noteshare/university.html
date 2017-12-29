@@ -1,0 +1,85 @@
+{% extends 'noteshare/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static "noteshare/css/university.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block body_block %}
+    <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">{{ university_name }}</h1>
+                            <p>{{ university_country }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <!--/#action-->
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <ul class="portfolio-filter text-center">
+                    <li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
+                    {# List all subjects #}
+                    {% for s in subjects %}
+                        <li><a class="btn btn-default" href="#" data-filter=".{{ s }}">{{ s|upper }}</a></li>
+                    {% endfor %}
+                </ul><!--/#portfolio-filter-->
+
+                <div class="portfolio-items">
+                    {# List all courses #}
+                    {% for c, color in courses.items %}
+                        <!-- {{ c.number }} -->
+                        <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item {{ c.subject }}">
+                            <div class="big {{ color }}-thumb" data-page="course-page" data-course="{{ c.id }}">
+                                <p><i class="fa fa-{{ c.fontawesome }}"></i>&nbsp;&nbsp;{{ c.number }}
+                                <span class="thumb-span">{{ c.name }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="portfolio-pagination">
+                    <ul class="pagination">
+                        <li><a>left</a></li>
+                        <li class="active"><a>1</a></li>
+                        <li><a>right</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#portfolio-->
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script type="text/javascript">
+        $('.big, .small').each(function(){
+            var $this= $(this),
+            page = $this.data('page'),
+            course = $this.data('course'),
+            color = $this.css('background-color');
+            $this.on('click',function(){
+                window.location.href = course.toLowerCase();
+            })
+        });
+        $('.big').hover(
+            function(){
+                var $height= $(this).children('p').height();
+                $(this).children('p').css('margin-top','-' + $height * 0.5 +'px');
+            },
+            function(){
+                $(this).children('p').css('margin-top','');
+            });
+    </script>
+{% endblock %}

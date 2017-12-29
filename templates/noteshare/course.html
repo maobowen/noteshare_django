@@ -1,0 +1,50 @@
+{% extends 'noteshare/base.html' %}
+
+{% block css %}
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <style>
+    .dl-horizontal dt {
+        white-space: normal;
+    }
+    .ul-normal ul {
+        list-style-type: disc;
+    }
+    </style>
+{% endblock %}
+
+{% block body_block %}
+    <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">{{ course_number }} - {{ course_name }}</h1>
+                            <p><a href=".."><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;{{ university_name }}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#action-->
+
+    <section id="portfolio-information">
+        <div class="container">
+            {% autoescape off %}{{ content }}{% endautoescape %}
+        </div>
+    </section>
+    <!--/#portfolio-information-->
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        var privileged_doc =
+            "<h4><span class=\"badge\">!</span>&nbsp;&nbsp;Privileged Documents</h4>\n" +
+            "<p></p>\n" +
+            "<p>Privileged documents on this page are only available to students from {{ university_name }}. To acquire those documents, please use your <strong>school email account</strong> to send an email to me. Please bear in mind that <strong>you are not allowed to redistribute them under any conditions</strong>.</p>";
+        $(document).ready(function(){
+            $(".privileged-doc").html(privileged_doc);
+        });
+    </script>
+{% endblock %}
