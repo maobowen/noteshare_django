@@ -7,14 +7,14 @@
     <meta name="description" content="A notes sharing website.">
     <meta name="author" content="Bowen Mao">
     <title>Page Not Found</title>
-    <link href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="{% static "noteshare/css/main.css" %}" rel="stylesheet">
-	<link href="{% static "noteshare/css/responsive.css" %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="{% static "noteshare/css/main.css" %}" rel="stylesheet">
+    <link href="{% static "noteshare/css/responsive.css" %}" rel="stylesheet">
 
     <!--[if lt IE 9]>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="{% static "noteshare/images/ico/favicon.ico" %}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "noteshare/images/ico/apple-touch-icon-144-precomposed.png" %}">
@@ -38,11 +38,13 @@
                             {% block message %}{% endblock %}
                             <a href="/" class="btn btn-error">RETURN TO THE HOMEPAGE</a>
                             <div class="social-link">
-                                <span><a href="https://github.com/maobowen" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></span>
-                                <span><a href="https://facebook.com/maobowen" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></span>
-                                <span><a href="https://twitter.com/maobowen3" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></span>
-                                <span><a href="https://weibo.com/maobowen3" target="_blank" title="Weibo"><i class="fa fa-weibo"></i></a></span>
-                                <span><a href="https://www.linkedin.com/in/bowen-mao" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></span>
+                                <a href="https://bmao.tech/" target="_blank" title="Website"><i class="fas fa-globe-asia"></i></a>
+                                <a href="https://github.com/maobowen" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://gitlab.com/maobowen" target="_blank" title="GitLab"><i class="fab fa-gitlab"></i></a>
+                                <a href="https://facebook.com/maobowen" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="https://twitter.com/maobowen3" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="https://m.weibo.cn/u/1849047041" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a>
+                                <a href="https://www.linkedin.com/in/bowen-mao" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -51,8 +53,8 @@
         </div>
     </section>
 
-    <script type="text/javascript" src='https://unpkg.com/jquery/dist/jquery.js'></script>
-    <script type="text/javascript" src='https://unpkg.com/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js'></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script type="text/javascript" src="{% static "noteshare/js/main.js" %}"></script>
 </body>

@@ -8,17 +8,17 @@
     <meta name="author" content="Bowen Mao">
     <title>{{ page_title }}NoteShare</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/css/prettyPhoto.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-	<link href="{% static "noteshare/css/main.css" %}" rel="stylesheet">
-	<link href="{% static "noteshare/css/responsive.css" %}" rel="stylesheet">
+    <link href="{% static "noteshare/css/main.css" %}" rel="stylesheet">
+    <link href="{% static "noteshare/css/responsive.css" %}" rel="stylesheet">
     {% block css %}{% endblock %}
 
     <!--[if lt IE 9]>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="{% static "noteshare/images/ico/favicon.ico" %}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "noteshare/images/ico/apple-touch-icon-144-precomposed.png" %}">
@@ -28,17 +28,19 @@
 </head><!--/head-->
 
 <body>
-	<header id="header">
+    <header id="header">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
                    <div class="social-icons pull-right">
                         <ul class="nav nav-pills">
-                            <li><a href="https://github.com/maobowen" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></li>
-                            <li><a href="https://facebook.com/maobowen" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/maobowen3" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://weibo.com/maobowen3" target="_blank" title="Weibo"><i class="fa fa-weibo"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/bowen-mao" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://bmao.tech/" target="_blank" title="Website"><i class="fas fa-globe-asia"></i></a></li>
+                            <li><a href="https://github.com/maobowen" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+                            <li><a href="https://gitlab.com/maobowen" target="_blank" title="GitLab"><i class="fab fa-gitlab"></i></a></li>
+                            <li><a href="https://facebook.com/maobowen" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/maobowen3" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://m.weibo.cn/u/1849047041" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/bowen-mao" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -106,11 +108,13 @@
 
                         <h2>Contact</h2>
                         <address>
-                            <i class="fa fa-github"></i> GitHub: <a href="https://github.com/maobowen" target="_blank" title="GitHub">Bowen Mao</a> <br>
-                            <i class="fa fa-facebook"></i> Facebook: <a href="https://facebook.com/maobowen" target="_blank" title="Facebook">Bowen Mao</a> <br>
-                            <i class="fa fa-twitter"></i> Twitter: <a href="https://twitter.com/maobowen3" target="_blank" title="Twitter">101对双生儿</a> <br>
-                            <i class="fa fa-weibo"></i> Weibo: <a href="https://weibo.com/maobowen3" target="_blank" title="Weibo">101对双生儿</a> <br>
-                            <i class="fa fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/bowen-mao" target="_blank" title="LinkedIn">Bowen Mao</a> <br>
+                            <i class="fas fa-globe-asia"></i> Website: <a href="https://bmao.tech/" target="_blank" title="GitHub">https://bmao.tech/</a> <br>
+                            <i class="fab fa-github"></i> GitHub: <a href="https://github.com/maobowen" target="_blank" title="GitHub">Bowen Mao</a> <br>
+                            <i class="fab fa-gitlab"></i> GitLab: <a href="https://gitlab.com/maobowen" target="_blank" title="GitLab">Bowen Mao</a> <br>
+                            <i class="fab fa-facebook"></i> Facebook: <a href="https://facebook.com/maobowen" target="_blank" title="Facebook">Bowen Mao</a> <br>
+                            <i class="fab fa-twitter"></i> Twitter: <a href="https://twitter.com/maobowen3" target="_blank" title="Twitter">101对双生儿</a> <br>
+                            <i class="fab fa-weibo"></i> Weibo: <a href="https://m.weibo.cn/u/1849047041" target="_blank" title="Weibo">101对双生儿</a> <br>
+                            <i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/bowen-mao" target="_blank" title="LinkedIn">Bowen Mao</a> <br>
                             <!-- <i class="fa fa-weixin"></i> WeChat: maobowen3 <br> -->
                         </address>
                     </div>
@@ -136,7 +140,7 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="copyright-text text-center">
-                        <p>&copy; Bowen Mao 2017. All Rights Reserved.</p>
+                        <p>&copy; <a href="https://bmao.tech/" target="_blank">Bowen Mao</a> {% now 'Y' %}. All Rights Reserved.</p>
                         <p>Theme <a href="https://shapebootstrap.net/item/1524992-triangle-free-responsive-multipurpose-template" target="_blank" >Triangle</a> is designed by <a target="_blank" href="https://www.themeum.com">Themeum</a>.</p>
                     </div>
                 </div>
