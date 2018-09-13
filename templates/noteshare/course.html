@@ -1,7 +1,7 @@
 {% extends 'noteshare/base.html' %}
 
 {% block css %}
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
     .dl-horizontal dt {
         white-space: normal;
@@ -35,16 +35,58 @@
         </div>
     </section>
     <!--/#portfolio-information-->
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-info">
+                        <p>Please note that Portable Document Format (PDF) files are opened in Google Docs Viewer by default. If Google is not accessible in your country, you may right-click the links and open them in new windows or tabs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 
 {% block js %}
     <script type="text/javascript">
-        var privileged_doc =
-            "<h4><span class=\"badge\">!</span>&nbsp;&nbsp;Privileged Documents</h4>\n" +
+        var restricted_doc =
+            "<h4><span class=\"badge\">!</span>&nbsp;&nbsp;Restricted Documents</h4>\n" +
             "<p></p>\n" +
-            "<p>Privileged documents on this page are only available to students from {{ university_name }}. To acquire those documents, please use your <strong>school email account</strong> to send an email to me. Please bear in mind that <strong>you are not allowed to redistribute them under any conditions</strong>.</p>";
+            "<p>Restricted documents on this page are only available to students from {{ university_name }}. To acquire those documents, please use your <strong>school email account</strong> to send an email to me. Please bear in mind that <strong>you are not allowed to redistribute them under any conditions</strong>.</p>";
         $(document).ready(function(){
-            $(".privileged-doc").html(privileged_doc);
+            $(".restricted-doc").html(restricted_doc);
+        });
+
+        // fancybox settings
+        $('[data-fancybox="mso"]').fancybox({
+            type: "iframe",
+            keyboard: false,
+            arrows: false,
+            infobar: false,
+            buttons: [
+                "fullScreen",
+                "close"
+            ],
+            beforeLoad: function(instance, current) {
+                var url = current.src.replace("drive.bmao.tech", "oneidx.herokuapp.com");
+                current.src = "https://view.officeapps.live.com/op/embed.aspx?src=" + encodeURIComponent(url);
+            }
+        });
+        $('[data-fancybox="gdoc"]').fancybox({
+            type: "iframe",
+            keyboard: false,
+            arrows: false,
+            infobar: false,
+            buttons: [
+                "fullScreen",
+                "close"
+            ],
+            beforeLoad: function(instance, current) {
+                var url = current.src.replace("drive.bmao.tech", "oneidx.herokuapp.com");
+                current.src = "https://docs.google.com/viewer?embedded=true&url=" + encodeURIComponent(url);
+            }
         });
     </script>
 {% endblock %}
