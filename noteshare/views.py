@@ -20,6 +20,7 @@ def university(request, university_id):
         courses2 = {}
         i = 0
         for c in courses:
+            c.id = c.id.split("-")[-1]
             courses2[c] = COLOR_SCHEME[i % len(COLOR_SCHEME)]
             i += 1
         subjects = Course.objects.filter(university=university_id.lower()).values_list('subject', flat=True).distinct().order_by()
@@ -36,8 +37,10 @@ def university(request, university_id):
 
 
 def course(request, university_id, course_id):
-    course = get_object_or_404(Course, id=course_id.lower(), university=university_id.lower())
-    with open('noteshare/' + course.university.id + '/' + course.id + '.html', 'r') as f:
+    course = get_object_or_404(Course,
+                               id=university_id.lower() + "-" + course_id.lower(),
+                               university=university_id.lower())
+    with open('noteshare/' + course.university.id + '/' + course.id.split("-")[-1] + '.html', 'r') as f:
         content = f.read()
     return render(request, 'noteshare/course.html', context={
         'page_title': course.number + ' | ' + course.university.name + ' | ',
